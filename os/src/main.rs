@@ -2,8 +2,6 @@
 #![no_main]
 #![feature(panic_info_message)]
 
-use crate::sbi::shutdown;
-
 #[macro_use]
 mod console;
 mod sbi;
@@ -46,7 +44,8 @@ fn clear_bss() {
 #[no_mangle]
 pub fn rust_main() -> ! {
     clear_bss();
-    println!("Hello, world!");
+    print!("hello,");
+    println!(" world!");
     panic!("shutdown!");
 }
 
